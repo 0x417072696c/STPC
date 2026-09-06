@@ -3,7 +3,7 @@
 Author: Valentin Lebedkin
 Year: 2026
 License: GNU GPL v3 (code), CC BY-SA 4.0 (text)
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22551854.svg)](https://doi.org/10.5281/zenodo.22551854)
 ## Contents
 
 - AllyMind: ab initio pathogenic mutation analysis
