@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>AllyMind 10.3 FINAL – HEARTBEAT и ключевые данные</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: #eff0f1; padding: 20px; line-height: 1.6; }
+  h1 { text-align: center; border-bottom: 2px solid #3daee9; padding-bottom: 10px; color: #3daee9; }
+  h2 { color: #3daee9; margin-top: 30px; }
+  h3 { color: #ffaa00; }
+  .formula { background: #2d2d2d; padding: 15px; border-radius: 8px; margin: 15px 0; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+  th, td { border: 1px solid #3daee9; padding: 10px; text-align: left; }
+  th { background: #333; color: #3daee9; }
+  .highlight { color: #55ff55; font-weight: bold; }
+  .warn { color: #ff5555; }
+  code { background: #333; padding: 2px 6px; border-radius: 4px; }
+  pre { background: #333; padding: 10px; border-radius: 4px; overflow-x: auto; }
+  .footer { text-align: center; margin-top: 40px; font-size: 0.8rem; color: #555; }
+</style>
+</head>
+<body>
+
+<h1>AllyMind 10.3 FINAL – Ключевые данные и настройки</h1>
+<p style="text-align:center;"><span class="highlight">Конфиденциально. Валентин Лебедкин, 16.07.2026.</span></p>
+
+<h2>1. Единая теория Кристалла (СТПК) – фундамент</h2>
+<h3>Основные постулаты</h3>
+<ul>
+  <li>Физическая реальность – дискретная фрактальная сеть (Кристалл) с внутренней симметрией SU(3) и SU(2).</li>
+  <li>Все взаимодействия (сильное, слабое, электромагнитное, гравитационное) объединены в единой геометрической структуре.</li>
+  <li>Фундаментальные константы выводятся из чисел 3, 8 и числа узлов Кристалла N ≈ 8·10⁶⁰, без подгоночных параметров.</li>
+</ul>
+
+<h3>Ключевые константы (выведены, не подогнаны)</h3>
+<table>
+  <tr><th>Константа</th><th>Вывод в СТПК</th><th>Значение</th></tr>
+  <tr><td>Постоянная тонкой структуры α⁻¹</td><td>(8/3)·ln N</td><td>~137.036</td></tr>
+  <tr><td>Отношение масс протона и электрона K</td><td>exp[(3/8)·α⁻¹]</td><td>~2.1·10²²</td></tr>
+  <tr><td>Гравитационная постоянная G</td><td>Выводится из K</td><td>~5.9·10⁻¹¹ м³/кг·с²</td></tr>
+  <tr><td>Зазор хаоса Δ</td><td>k<sub>B</sub>T (300 K)</td><td>0.028 эВ</td></tr>
+  <tr><td>Энергия водородной связи J</td><td>Средняя в β-листе</td><td>0.125 эВ</td></tr>
+</table>
+
+<h2>2. Решение парадокса Левинталя</h2>
+<h3>Формула когерентного каскада</h3>
+<div class="formula">
+  <b>Время сворачивания:</b> τ = τ₀ · exp(α·N), где α = (Δ/J)² = (0.028/0.125)² ≈ <b>0.04</b><br>
+  <b>Логарифмическая форма:</b> ln(τ) = ln(τ₀) + 0.04·N<br>
+  <b>Скорость:</b> ln(k<sub>f</sub>) = −ln(τ₀) − 0.04·N
+</div>
+
+<h3>Верификация на KineticDB (87 белков, 36–605 а.о.)</h3>
+<table>
+  <tr><th>Метрика</th><th>Коэффициент корреляции r</th><th>Модель</th></tr>
+  <tr><td>ln(k<sub>f</sub>) vs N</td><td>0.8152</td><td>СТПК</td></tr>
+  <tr><td>ln(τ) vs N (оптим. смещение)</td><td>0.8910</td><td>СТПК</td></tr>
+  <tr><td>τ (мс) vs N (лог-шкала)</td><td class="highlight">0.9808</td><td>СТПК</td></tr>
+  <tr><td>τ (мс) vs N (лог-шкала)</td><td class="warn">0.8511</td><td>Логарифмическая модель</td></tr>
+</table>
+<p><b>Вывод:</b> когерентный каскад объясняет 96% дисперсии времени сворачивания без единого свободного параметра. Стандартная модель проваливается на краях диапазона.</p>
+
+<h2>3. AllyMind 10.3 – программный комплекс</h2>
+<h3>Функциональность</h3>
+<ul>
+  <li>Анализ одиночных мутаций и пакетная обработка (Batch).</li>
+  <li>Загрузка последовательностей из UniProt/Swiss-Prot и FASTA.</li>
+  <li>Поддержка PDB-структур с DSSP (точная вторичная структура).</li>
+  <li>31 правило классификации мутаций (от онкогенных до потери сигнального пептида).</li>
+  <li>Расчёт глубины ловушки, ΔΔG, динамического порога J, стратегии терапии.</li>
+  <li>Интерактивные HTML-отчёты с 3D-моделью (3Dmol.js) и графиками (Chart.js).</li>
+  <li>Встроенная вкладка «Ядерные изомеры» с batch-режимом.</li>
+  <li>3D Structure на Matplotlib (CA-след).</li>
+  <li>STPC Model – граф когерентных связей с раскраской по опасности.</li>
+  <li>Контекстное меню (Copy/Paste) во всех полях ввода.</li>
+</ul>
+
+<h3>Основные файлы</h3>
+<table>
+  <tr><th>Файл</th><th>Назначение</th></tr>
+  <tr><td><code>gui_unified.py</code></td><td>Главный интерфейс (Tkinter, Matplotlib)</td></tr>
+  <tr><td><code>allymind_core.py</code></td><td>Ядро расчётов (энергии, 31 правило)</td></tr>
+  <tr><td><code>cascade.py</code></td><td>Физическая модель (когерентность, свободная энергия)</td></tr>
+  <tr><td><code>pdb_parser.py</code></td><td>Загрузка PDB, извлечение DSSP, металлов</td></tr>
+  <tr><td><code>protein_fetcher.py</code></td><td>Запросы к UniProt API</td></tr>
+  <tr><td><code>clinvar.db</code></td><td>База ClinVar (5.7 млн мутаций)</td></tr>
+  <tr><td><code>uniprot.db</code></td><td>База Swiss-Prot (575 тыс. записей)</td></tr>
+  <tr><td><code>mkdssp.exe</code></td><td>DSSP для точной вторичной структуры</td></tr>
+  <tr><td><code>kineticdb_dataset.csv</code></td><td>Экспериментальные данные для верификации</td></tr>
+</table>
+
+<h3>Сборка EXE (из папки <code>AllyMind 10_3</code>)</h3>
+<pre>
+Remove-Item -Recurse -Force _blackbox_build, build, dist, __pycache__ -ErrorAction SilentlyContinue
+Get-ChildItem -Recurse -File -Filter "*.pyc" | Remove-Item -Force
+New-Item -ItemType Directory -Force _blackbox_build | Out-Null
+Copy-Item *.py, *.db, *.ico, mkdssp.exe _blackbox_build\ -Force
+python -m PyInstaller --onefile --noconsole --clean --icon="_blackbox_build\allymind_logo.ico" --add-data "_blackbox_build\clinvar.db;." --add-data "_blackbox_build\uniprot.db;." --add-data "_blackbox_build\mkdssp.exe;." --exclude-module torch --exclude-module torchvision --exclude-module pygame --exclude-module skimage --exclude-module sklearn --exclude-module sqlalchemy --exclude-module numba --exclude-module pandas --exclude-module sympy --exclude-module llvmlite --name AllyMind_BlackBox _blackbox_build\gui_unified.py
+New-Item -ItemType Directory -Force dist | Out-Null
+Set-Content -Path "dist\run.bat" -Value "@echo off`nchcp 65001`nAllyMind_BlackBox.exe`npause"
+</pre>
+
+<h2>4. 31 правило классификации мутаций (кратко)</h2>
+<ol>
+  <li>Онкогенные мутации (TP53 R175H, R248W, R273H).</li>
+  <li>Цинковые пальцы (C176, H179, C238, C242).</li>
+  <li>Активный центр (His-114 ангиогенина).</li>
+  <li>Фосфорилирование (S,T,Y → не S,T,Y).</li>
+  <li>Гликозилирование (N-X-S/T).</li>
+  <li>Убиквитинирование (K в мотиве).</li>
+  <li>Сигнальный пептид (первые 25 а.о.).</li>
+  <li>Трансмембранный домен / Core Cavity.</li>
+  <li>Ядерная локализация (NLS).</li>
+  <li>Митохондриальная локализация (MTS).</li>
+  <li>Шаперон-зависимость (потеря гидрофобного кластера).</li>
+  <li>Протеасомная деградация (PEST).</li>
+  <li>Аутофагия (LIR).</li>
+  <li>Апоптоз (BH3).</li>
+  <li>Клеточный цикл (Cyclin-binding).</li>
+  <li>Репарация ДНК (PCNA).</li>
+  <li>Ароматический кор (Y,F,W → не ароматический).</li>
+  <li>Дисульфидная связь (C → не C).</li>
+  <li>Helix breaker (G,P в спирали).</li>
+  <li>Координация металлов (Zn, Mg, Ca, Fe).</li>
+  <li>Стерический клэш (объёмная замена в hidden).</li>
+  <li>Инверсия заряда на поверхности (заряженный → гидрофобный).</li>
+  <li>Димерный интерфейс.</li>
+  <li>Allosteric Hotspot (B-фактор > 60, ΔVol > 0.1).</li>
+  <li>DNA/RNA Binding Loss.</li>
+  <li>Protein-Protein Interface Disruption.</li>
+  <li>IDR Functional Modulation.</li>
+  <li>Proteolytic Site Altered.</li>
+  <li>Linker Disruption (петля между доменами).</li>
+  <li>Filament Assembly Defect.</li>
+  <li>Non-Zn Metal Coordination Loss (Mg, Ca, Fe).</li>
+</ol>
+
+<h2>5. Проект «Квантовое кольцо» (кратко)</h2>
+<ul>
+  <li>100-кубитный квантовый процессор на SU(3)-синглетных кластерах Co²⁺ в пептидном каркасе.</li>
+  <li>Работа при комнатной температуре (300 K), время декогеренции ~0.8 мкс.</li>
+  <li>Масштабируемость до 7000 кубитов без криогенного охлаждения.</li>
+</ul>
+
+<div class="footer">
+  © Валентин Лебедкин, 2026. Конфиденциально. Для служебного пользования.
+</div>
+
+</body>
+</html>
